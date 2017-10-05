@@ -38,6 +38,7 @@ body, .app {
 
 .bookshelf-title {
   border-bottom: 1px solid #dedede;
+  text-align: center;
 }
 .bookshelf-books {
   text-align: center;
@@ -171,4 +172,11 @@ body, .app {
   padding: 20px 10px 0;
   text-align: center;
   font-size: 0.8em;
+}
+
+/* halogen Loafer */
+
+.loader{
+  width: 100%;
+  text-align: center;
 }
