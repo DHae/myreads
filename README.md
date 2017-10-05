@@ -5,6 +5,8 @@
 
 - [What It Is](#what)
 - [Installing](#installing)
+- [Launching](#launching)
+- [Used packeges](#packages)
 
 ## What
 
@@ -24,4 +26,13 @@ npm start
 ```
 
 
+## Launching
+Launhcing is as easy, as installing
 
+```
+npm start
+```
+
+## Packeges
+
+I used [Halogen](https://github.com/yuanyan/halogen) to show the loading indicator.
