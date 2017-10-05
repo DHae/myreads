@@ -10,13 +10,38 @@ import './App.css'
 
 class BooksApp extends React.Component {
   state = {
-     books:[]
+     books:[],
+     loading:false,
+     searchLoading:false,
+     results:[]
+  }
+  getAllBooks=()=>{
+    this.setState({
+      loading:true
+    })
+    BooksAPI.getAll().then((books)=>{
+      this.setState({
+        books,
+        loading:false
+      })
+    })
   }
   componentDidMount(){
-    BooksAPI.getAll().then((books) => {
-      console.log(books);
+    this.getAllBooks()
+  }
+  moveTo=(book,shelf)=>{
+    BooksAPI.update(book,shelf).then(book=>{
+      this.getAllBooks()
+    })
+  }
+  search=(query,maxResults)=>{
+    this.setState({
+      searchLoading:true
+    })
+    BooksAPI.search(query,maxResults).then(results=>{
       this.setState({
-        books
+        searchLoading:false,
+        results:results
       })
     })
   }
@@ -26,7 +51,12 @@ class BooksApp extends React.Component {
         <Route
           path='/search'
           render={(history) => (
-            <Search/>
+            <Search
+              search={this.search}
+              searchLoading={this.state.searchLoading}
+              results={this.state.results}
+              moveTo={this.moveTo}
+            />
           )}
         />
         <Route
@@ -34,6 +64,8 @@ class BooksApp extends React.Component {
           render={() => (
             <ListBooks
               books={this.state.books}
+              loadState={this.state.loading}
+              moveTo={this.moveTo}
             />
           )}
         />

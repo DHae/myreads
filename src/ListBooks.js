@@ -11,7 +11,7 @@ class ListBooks extends React.Component{
             <div className="book-top">
               <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.thumbnail})` }}></div>
               <div className="book-shelf-changer">
-                <select>
+                <select onChange={(e)=>{this.props.moveTo(book,e.target.value);}} defaultValue={book.shelf}>
                   <option value="none" disabled>Move to...</option>
                   <option value="currentlyReading">Currently Reading</option>
                   <option value="wantToRead">Want to Read</option>
@@ -37,7 +37,7 @@ class ListBooks extends React.Component{
             <div className="book-top">
               <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.thumbnail})` }}></div>
               <div className="book-shelf-changer">
-                <select>
+                <select onChange={(e)=>{this.props.moveTo(book,e.target.value);}} defaultValue={book.shelf}>
                   <option value="none" disabled>Move to...</option>
                   <option value="currentlyReading">Currently Reading</option>
                   <option value="wantToRead">Want to Read</option>
@@ -63,7 +63,7 @@ class ListBooks extends React.Component{
             <div className="book-top">
               <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.thumbnail})` }}></div>
               <div className="book-shelf-changer">
-                <select>
+                <select onChange={(e)=>{this.props.moveTo(book,e.target.value);}} defaultValue={book.shelf}>
                   <option value="none" disabled>Move to...</option>
                   <option value="currentlyReading">Currently Reading</option>
                   <option value="wantToRead">Want to Read</option>
