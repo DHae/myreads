@@ -183,3 +183,8 @@ body, .app {
   height: 200px;
   position: fixed;
 }
+
+.search-result{
+  width: 100%;
+  text-align: center;
+}

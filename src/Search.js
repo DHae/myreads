@@ -48,7 +48,7 @@ class Search extends React.Component {
     }
 
     await sleep(this.searchDelay);
-
+    console.log(this.setState.noResult);
     if (this.state.query !== searchQuery) return;
 
     try {
@@ -97,24 +97,27 @@ class Search extends React.Component {
             <input autoFocus type="text" placeholder="Search by title or author" onChange={e => this.handleSearchInput(e.target.value)} value={this.state.query}/>
           </div>
         </div>
-        <div className="search-books-results">
-        {this.state.noResult&&
-          <h2 className="bookshelf-title">No Result</h2>
-        }
-        {this.state.searchLoading&&
-          <Loader color="#2e7c31" className="loader"/>
-        }
-        {!this.state.searchLoading&&
-          <ol className="books-grid">
-            {this.state.books.map(book =>
-              <Book
-                key={book.id}
-                book={book}
-                moveTo={this.props.moveTo}
-              />
-            )}
-          </ol>
-        }
+        <div className="search-books-results">        
+          {this.state.noResult&&
+            <h2 className="bookshelf-title">No Result</h2>
+          }
+          {this.state.searchLoading&&
+            <Loader color="#2e7c31" className="loader"/>
+          }
+          {!this.state.searchLoading&&!this.state.noResult&&
+            <div>
+              <div className="search-result">{(Object.prototype.toString.call( this.state.books ) === '[object Array]')?`Showing ${this.state.books.length} results`:''}<br/><br/></div>        
+              <ol className="books-grid">
+                {this.state.books.map(book =>
+                  <Book
+                    key={book.id}
+                    book={book}
+                    moveTo={this.props.moveTo}
+                  />
+                )}
+              </ol>
+            </div>
+          }
         </div>
       </div>
     )
