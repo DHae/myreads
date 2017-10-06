@@ -2,9 +2,11 @@
   "dependencies": {
     "halogen": "^0.2.0",
     "prop-types": "^15.5.8",
+    "query-string": "^5.0.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-router-dom": "^4.2.2"
+    "react-router-dom": "^4.2.2",
+    "then-sleep": "^1.0.1"
   },
   "devDependencies": {
     "react-scripts": "0.9.5"
