@@ -177,6 +177,9 @@ body, .app {
 /* halogen Loafer */
 
 .loader{
+  left: 50%;
+  top: 50%;
   width: 100%;
-  text-align: center;
+  height: 200px;
+  position: fixed;
 }

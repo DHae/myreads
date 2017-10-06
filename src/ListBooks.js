@@ -94,29 +94,31 @@ class ListBooks extends React.Component{
     return(
       
       <div className="list-books">
-        {this.props.loadState&&
-          <Loader color="#2e7c31" size="16px" margin="4px" className="loader"/>
-        }
         <div className="list-books-title">
           <h1>MyReads</h1>
         </div>
-        <div className="list-books-content">
-          <BookShelf
-            key="currently"
-            books={currentlyReadingBooks}
-            shelftitle="Currently Reading"
-          />
-          <BookShelf
-            key="wantToRead"
-            books={wantToReadBooks}
-            shelftitle="Want to Read"
-          />
-          <BookShelf
-            key="read"
-            books={readBooks}
-            shelftitle="Read"
-          />
-        </div>
+        {this.props.loadState&&
+          <Loader color="#2e7c31" className="loader"/>
+        }
+        {!this.props.loadState&&
+          <div className="list-books-content">
+            <BookShelf
+              key="currently"
+              books={currentlyReadingBooks}
+              shelftitle="Currently Reading"
+            />
+            <BookShelf
+              key="wantToRead"
+              books={wantToReadBooks}
+              shelftitle="Want to Read"
+            />
+            <BookShelf
+              key="read"
+              books={readBooks}
+              shelftitle="Read"
+            />
+          </div>
+        }        
         <div className="open-search">
           <Link to="/search">Add a book</Link>
         </div>
