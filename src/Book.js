@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Book({ book, moveTo }) {
   const { id, imageLinks, shelf, title, authors } = book;

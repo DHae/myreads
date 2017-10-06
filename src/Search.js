@@ -3,7 +3,7 @@ import { Link, withRouter } from 'react-router-dom'
 import * as BooksAPI from './BooksAPI'
 import queryString from 'query-string'
 import Book from './Book'
-import sleep from "then-sleep";
+import sleep from 'then-sleep'
 import Loader from 'halogen/ClipLoader'
 
 class Search extends React.Component {
