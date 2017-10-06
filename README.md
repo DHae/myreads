@@ -35,4 +35,7 @@ npm start
 
 ## Packages
 
-I used [Halogen](https://github.com/yuanyan/halogen) to show the loading indicator.
+following packages are used:
+ - [Halogen](https://github.com/yuanyan/halogen)
+ - [then-sleep](https://github.com/ngthanhtrung/then-sleep-js)
+ - [query-string](https://github.com/sindresorhus/query-string)
